@@ -19,7 +19,7 @@ lm_pin2.duty(00)
 rm_pin1.duty(30)
 rm_pin2.duty(00)
 
-sleep 5.9 # 5.9秒間待機
+sleep 6.4 # 6.2秒間待機
 
 # 右に90度回転
 lm_pin1.duty(30)
@@ -27,7 +27,7 @@ lm_pin2.duty(00)
 rm_pin1.duty(00)
 rm_pin2.duty(30)
 
-sleep 1.4
+sleep 1.8
 
 # 左右モーター停止
 lm_pin1.duty(100)
@@ -59,7 +59,7 @@ if (80 < distance && distance < 250)
     rm_pin1.duty(30)
     rm_pin2.duty(00)
 
-    sleep 1.6
+    sleep 1.8
 
     # 左右モーター出力30%正回転
     lm_pin1.duty(30)
