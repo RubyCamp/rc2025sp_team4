@@ -8,19 +8,19 @@ lm_pin2 = PWM.new(33) # 左モーターPIN2
 
 # 前進
 lm_pin1.duty(100)
-lm_pin2.duty(70)
+lm_pin2.duty(60)
 rm_pin1.duty(100)
-rm_pin2.duty(70)
+rm_pin2.duty(60)
 
-sleep 2.8 # 3.5秒間待機
+sleep 3
 
 # 右に90度回転
 lm_pin1.duty(100)
 lm_pin2.duty(70)
-rm_pin1.duty(100)
-rm_pin2.duty(70)
+rm_pin1.duty(70)
+rm_pin2.duty(100)
 
-sleep 1.3
+sleep 1.7
 
 # 前進
 lm_pin1.duty(100)
@@ -30,19 +30,11 @@ rm_pin2.duty(70)
 
 sleep 2.5 # 秒間待機
 
-#一時停止
-lm_pin1.duty(0)
-lm_pin2.duty(0)
-rm_pin1.duty(0)
-rm_pin2.duty(0)
-
-sleep 4.0
-
 #前進
 lm_pin1.duty(100)
 lm_pin2.duty(70)
 rm_pin1.duty(100)
-rm_pin2.duty(07)
+rm_pin2.duty(70)
 
 sleep 1.4 # 秒間待機
 
@@ -52,7 +44,7 @@ lm_pin2.duty(100)
 rm_pin1.duty(100)
 rm_pin2.duty(70)
 
-sleep 1.3
+sleep 1.7
 
 #一時停止
 lm_pin1.duty(0)

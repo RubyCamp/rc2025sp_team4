@@ -64,7 +64,7 @@ lm_pin2.duty(70)
 rm_pin1.duty(70)
 rm_pin2.duty(100)
 
-sleep 0.9
+sleep 1.3
 
 # 左右モーター停止
 lm_pin1.duty(100)
