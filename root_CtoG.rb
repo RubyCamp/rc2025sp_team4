@@ -14,9 +14,9 @@ rm_pin2.duty(00)
 
 sleep 1.9 # 秒間待機
 
-lm_pin1.duty(100)
-lm_pin2.duty(100)
-rm_pin1.duty(100)
-rm_pin2.duty(100)
+lm_pin1.duty(0)
+lm_pin2.duty(0)
+rm_pin1.duty(0)
+rm_pin2.duty(0)
 
 sleep 3.0
