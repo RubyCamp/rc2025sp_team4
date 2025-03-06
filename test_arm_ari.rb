@@ -56,7 +56,7 @@ sleep 0.7
 #左右のアームを開く
 servo1.pulse_width_us(800) 
 servo2.pulse_width_us(2200) 
-sleep 1
+sleep 0.3
 
 # 一旦停止
 lm_pin1.duty(100)
@@ -85,7 +85,7 @@ sleep 2
 #左右のアームを閉じる
 servo1.pulse_width_us(1200) 
 servo2.pulse_width_us(1800) 
-sleep 1
+sleep 0.3
 
 # 一旦停止
 lm_pin1.duty(100)
@@ -146,7 +146,7 @@ sleep 2
 #左右のアームを開く
 servo1.pulse_width_us(800) 
 servo2.pulse_width_us(2200) 
-sleep 1
+sleep 0.3
 
 #一時停止
 lm_pin1.duty(0)
@@ -183,7 +183,7 @@ sleep 2
 #左右のアームを閉じる
 servo1.pulse_width_us(1200) 
 servo2.pulse_width_us(1800) 
-sleep 1
+sleep 0.3
 
 #一時停止
 lm_pin1.duty(0)
@@ -212,7 +212,7 @@ sleep 2
 #左右のアームを開く
 servo1.pulse_width_us(800) 
 servo2.pulse_width_us(2200) 
-sleep 1
+sleep 0.3
 
 #一時停止
 lm_pin1.duty(0)
@@ -256,7 +256,7 @@ params1.each do |param|
   elsif param[0] == "surbo"
     servo1.pulse_width_us(param[1]) 
     servo2.pulse_width_us(param[2]) 
-    sleep 1
+    sleep 0.3
   end
 end
 
@@ -289,6 +289,6 @@ param.each do |param|
   elsif param[0] == "surbo"
     servo1.pulse_width_us(param[1]) 
     servo2.pulse_width_us(param[2]) 
-    sleep 1
+    sleep 0.3
   end
 end
