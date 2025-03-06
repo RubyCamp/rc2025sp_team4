@@ -170,7 +170,7 @@ lm_pin2.duty(70)
 rm_pin1.duty(100)
 rm_pin2.duty(70)
 
-sleep 2.6
+sleep 2.7
 
 #前進
 lm_pin1.duty(100)
