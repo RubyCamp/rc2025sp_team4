@@ -33,7 +33,7 @@ while sleeptime < 1.5
   rm_pin1.duty(100)
   rm_pin2.duty(100)
 
-  sleep 1
+  sleep 0.5
   if (lux_left.read_raw >= 0 && lux_left.read_raw < 300)
     lm_pin1.duty(100)
     lm_pin2.duty(70)
@@ -53,10 +53,18 @@ rm_pin2.duty(100)
 
 sleep 0.5
 
+# 一旦停止
+lm_pin1.duty(100)
+lm_pin2.duty(100)
+rm_pin1.duty(100)
+rm_pin2.duty(100)
+
+sleep 0.1
+
 #左右のアームを開く
 servo1.pulse_width_us(800) 
 servo2.pulse_width_us(2200) 
-sleep 1
+sleep 0.3
 
 # 一旦停止
 lm_pin1.duty(100)
@@ -64,7 +72,7 @@ lm_pin2.duty(100)
 rm_pin1.duty(100)
 rm_pin2.duty(100)
 
-sleep 2
+sleep 0.1
 
 # 直進
 lm_pin1.duty(100)
@@ -80,12 +88,12 @@ lm_pin2.duty(100)
 rm_pin1.duty(100)
 rm_pin2.duty(100)
 
-sleep 2
+sleep 0.1
 
 #左右のアームを閉じる
-servo1.pulse_width_us(1200) 
-servo2.pulse_width_us(1800) 
-sleep 1
+servo1.pulse_width_us(1100) 
+servo2.pulse_width_us(1900) 
+sleep 0.3
 
 # 一旦停止
 lm_pin1.duty(100)
@@ -93,7 +101,7 @@ lm_pin2.duty(100)
 rm_pin1.duty(100)
 rm_pin2.duty(100)
 
-sleep 2
+sleep 0.1
 
 # Aの方角を向く
 lm_pin1.duty(100)
@@ -101,7 +109,7 @@ lm_pin2.duty(70)
 rm_pin1.duty(70)
 rm_pin2.duty(100)
 
-sleep 1.3
+sleep 1.5
 
 # 左右モーター停止
 lm_pin1.duty(100)
@@ -109,13 +117,13 @@ lm_pin2.duty(100)
 rm_pin1.duty(100)
 rm_pin2.duty(100)
 
-sleep 3
+sleep 0.1
 
 # 前進
 lm_pin1.duty(100)
 lm_pin2.duty(60)
 rm_pin1.duty(100)
-rm_pin2.duty(60)
+rm_pin2.duty(58)
 
 sleep 3
 
@@ -125,7 +133,7 @@ lm_pin2.duty(100)
 rm_pin1.duty(100)
 rm_pin2.duty(100)
 
-sleep 3
+sleep 0.1
 
 # 右に90度回転
 lm_pin1.duty(100)
@@ -133,7 +141,7 @@ lm_pin2.duty(75)
 rm_pin1.duty(75)
 rm_pin2.duty(100)
 
-sleep 2.4
+sleep 2.6
 
 #一時停止
 lm_pin1.duty(0)
@@ -141,12 +149,12 @@ lm_pin2.duty(0)
 rm_pin1.duty(0)
 rm_pin2.duty(0)
 
-sleep 2
+sleep 0.1
 
 #左右のアームを開く
 servo1.pulse_width_us(800) 
 servo2.pulse_width_us(2200) 
-sleep 1
+sleep 0.3
 
 #一時停止
 lm_pin1.duty(0)
@@ -154,7 +162,7 @@ lm_pin2.duty(0)
 rm_pin1.duty(0)
 rm_pin2.duty(0)
 
-sleep 2
+sleep 0.1
 
 # 前進
 lm_pin1.duty(100)
@@ -162,7 +170,7 @@ lm_pin2.duty(70)
 rm_pin1.duty(100)
 rm_pin2.duty(70)
 
-sleep 2.6
+sleep 2.7
 
 #前進
 lm_pin1.duty(100)
@@ -178,12 +186,12 @@ lm_pin2.duty(0)
 rm_pin1.duty(0)
 rm_pin2.duty(0)
 
-sleep 2
+sleep 0.1
 
 #左右のアームを閉じる
-servo1.pulse_width_us(1200) 
-servo2.pulse_width_us(1800) 
-sleep 1
+servo1.pulse_width_us(1100) 
+servo2.pulse_width_us(1900) 
+sleep 0.3
 
 #一時停止
 lm_pin1.duty(0)
@@ -191,7 +199,7 @@ lm_pin2.duty(0)
 rm_pin1.duty(0)
 rm_pin2.duty(0)
 
-sleep 2
+sleep 0.1
 
 # 左に90度回転
 lm_pin1.duty(70)
@@ -199,7 +207,7 @@ lm_pin2.duty(100)
 rm_pin1.duty(100)
 rm_pin2.duty(70)
 
-sleep 1.5
+sleep 1.9
 
 #一時停止
 lm_pin1.duty(0)
@@ -207,43 +215,32 @@ lm_pin2.duty(0)
 rm_pin1.duty(0)
 rm_pin2.duty(0)
 
-sleep 2
-
-#左右のアームを開く
-servo1.pulse_width_us(800) 
-servo2.pulse_width_us(2200) 
-sleep 1
-
-#一時停止
-lm_pin1.duty(0)
-lm_pin2.duty(0)
-rm_pin1.duty(0)
-rm_pin2.duty(0)
-
-sleep 2
+sleep 0.1
 
 params1 = [
     ["motor",100,70,100,70,0.5], # 左モーター出力右モーター出力30, 0.5秒前進
     ["motor",100,65,100,65,0.5], # 左モーター出力右モーター出力30, 0.5秒前進
     ["motor",100,60,100,60,2.0], # 左モーター出力右モーター出力30, 5.7秒前進
-    ["motor",50,50,50,50,1], # 3秒モーター停止
+    ["motor",50,50,50,50,0.1], # 3秒モーター停止
+    ["surbo",800,2200],
+    ["motor",50,50,50,50,0.1], # 3秒モーター停止
 
-    ["motor",100,55,100,60,1.5], # 左モーター出力35, 右モーター右モーター出力30, 4.5秒前進
-    ["motor",100,100,100,100,1.0], # 3秒モーター停止
-    ["surbo",1200,1800], 
-    ["motor",0,0,0,0,1.0], # 2秒モーター停止
-    ["motor",100,60,100,60,5.0], # 左モーター出力35, 右モーター右モーター出力30, 4.5秒前進
-    ["motor",0,0,0,0,1.0], # 3秒モーター停止
+    ["motor",100,55,100,60,1.8], # 左モーター出力35, 右モーター右モーター出力30, 4.5秒前進
+    ["motor",100,100,100,100,0.1], # 3秒モーター停止
+    ["surbo",1100,1900], 
+    ["motor",0,0,0,0,0.1], # 2秒モーター停止
+    ["motor",100,60,100,56,5.3], # 左モーター出力35, 右モーター右モーター出力30, 4.5秒前進
+    ["motor",0,0,0,0,0.1], # 3秒モーター停止
 
-    ["motor",75, 100, 100, 75, 2.5], # 左モーター出力35, 右モーター右モーター出力30, 4.5秒前進
-    ["motor",0,0,0,0,2.0], # 2秒モーター停止
+    ["motor",75, 100, 100, 75, 2.3], # 左モーター出力35, 右モーター右モーター出力30, 4.5秒前進
+    ["motor",0,0,0,0,0.1], # 2秒モーター停止
 
-    ["surbo",800,2000], 
-    ["motor",0,0,0,0,2.0], # 2秒モーター停止
+    ["surbo",800,2200], 
+    ["motor",0,0,0,0,0.1], # 2秒モーター停止
 
     ["motor",100, 60, 100, 60, 5.0], # 左モーター出力35, 右モーター右モーター出力30, 4.5秒前進
-    ["motor",0,0,0,0,3.0], # 3秒モーター停止
-    ["surbo",1200,1800]
+    ["motor",0,0,0,0,0.1], # 3秒モーター停止
+    ["surbo",1100,1900]
 ]
 
 # 繰り返し文
@@ -258,28 +255,28 @@ params1.each do |param|
   elsif param[0] == "surbo"
     servo1.pulse_width_us(param[1]) 
     servo2.pulse_width_us(param[2]) 
-    sleep 1
+    sleep 0.3
   end
 end
 
 param = [
   #左の前に進む, 左の後ろに進む, 右の前に進む, 右の後ろに進む, 秒数
   ["motor",100, 70, 100, 70, 1.25],
-  ["motor",0, 0, 0, 0, 1.0],
+  ["motor",0, 0, 0, 0, 0.1],
   ["motor",70, 100, 100, 70, 2.0],
-  ["motor",0, 0, 0, 0, 1.0],
+  ["motor",0, 0, 0, 0, 0.1],
   ["motor",100, 70, 100, 70, 5.0],
-  ["motor",50, 50, 50, 50, 1.0],
+  ["motor",50, 50, 50, 50, 0.1],
   ["motor",100, 70, 100, 70, 5.5],
-  ["motor",0, 0, 0, 0, 1.0],
-  ["motor",100, 70, 70, 100, 1.9],
+  ["motor",0, 0, 0, 0, 0.1],
+  ["motor",100, 70, 70, 100, 1.6],
   ["surbo",800,2200], 
-  ["motor",0,0,0,0,1.0], # 1秒モーター停止
+  ["motor",0,0,0,0,0.1], # 1秒モーター停止
 
 
   #ゴール用
-  ["motor",70, 00, 70, 00, 3.5],
-  ["motor",0, 0, 0, 0, 1.0]
+  ["motor",70, 00, 70, 00, 4.5],
+  ["motor",0, 0, 0, 0, 0.1]
 ]
 
 param.each do |param|
@@ -292,6 +289,6 @@ param.each do |param|
   elsif param[0] == "surbo"
     servo1.pulse_width_us(param[1]) 
     servo2.pulse_width_us(param[2]) 
-    sleep 1
+    sleep 0.3
   end
 end
